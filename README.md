@@ -169,15 +169,17 @@
           UF.MakeSet(cell);
     
         var random = new Random();
+        var candidates = new List<Edge>(edges);
         int removedEdges = 0; 
         while (removedEdges < grid.Count()-1) {
-          int next = random.Next(edges.Count);
-          var edge = edges[next];
+          int next = random.Next(candidates.Count);
+          var edge = candidates[next];
           if (UF.Find(edge.Key) != UF.Find(edge.Value)) {
             UF.Union(UF.Find(edge.Key),UF.Find(edge.Value));
-            edges.RemoveAt(next);
+            edges.Remove(edge);
             removedEdges++;
           }
+          candidates.RemoveAt(next); 
         }
         DrawMaze(edges, width, height); 
       }
