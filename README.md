@@ -195,7 +195,11 @@
     mcs demo/mazegenerator.cs src/unionfind.cs
     mono demo/mazegenerator.exe 21 21
 
+![img](images/maze2.png)
+
 ### An Even Larger Example<a id="orgheadline5"></a>
 
     mcs demo/mazegenerator.cs src/unionfind.cs
     mono demo/mazegenerator.exe 54 54
+
+![img](images/maze3.png)
