@@ -177,13 +177,13 @@ mono demo/connectedcomponents.exe
 
 *** Example 
 
- #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
+ #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
  mcs demo/mazegenerator.cs src/unionfind.cs
  mono demo/mazegenerator.exe 7 7 
  #+END_SRC
 
  #+RESULTS:
- #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze.png  :headers '("\\usepackage{tikz}")
+ #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze.png  :headers '("\\usepackage{tikz}")
  \begin{tikzpicture}[>=latex]
    \draw[thick](0,0) -- (7,0);
    \draw[thick](0,7) -- (7,7);
@@ -234,13 +234,13 @@ mono demo/connectedcomponents.exe
 
 *** Larger Example 
 
- #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze2.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
+ #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze2.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
  mcs demo/mazegenerator.cs src/unionfind.cs
  mono demo/mazegenerator.exe 21 21 
  #+END_SRC
 
  #+RESULTS:
- #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze2.png  :headers '("\\usepackage{tikz}")
+ #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze2.png  :headers '("\\usepackage{tikz}")
  \begin{tikzpicture}[>=latex]
    \draw[thick](0,0) -- (21,0);
    \draw[thick](0,21) -- (21,21);
@@ -654,13 +654,13 @@ mono demo/connectedcomponents.exe
 
 *** An Even Larger Example 
 
- #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze3.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
+ #+BEGIN_SRC sh :results verbatim :wrap "SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze3.png  :headers '(\"\\\\usepackage{tikz}\")" :exports both
  mcs demo/mazegenerator.cs src/unionfind.cs
  mono demo/mazegenerator.exe 54 54 
  #+END_SRC
 
  #+RESULTS:
- #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :yexports results :fit yes :noweb yes :file images/maze3.png  :headers '("\\usepackage{tikz}")
+ #+BEGIN_SRC latex :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400 :results raw :exports results :fit yes :noweb yes :file images/maze3.png  :headers '("\\usepackage{tikz}")
  \begin{tikzpicture}[>=latex]
    \draw[thick](0,0) -- (54,0);
    \draw[thick](0,54) -- (54,54);
