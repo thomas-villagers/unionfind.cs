@@ -155,18 +155,18 @@
     
         int width, height;
         if (!Int32.TryParse(args[0], out width)) width = 7;
-        if (!Int32.TryParse(args[0], out height)) height = 7;
+        if (!Int32.TryParse(args[1], out height)) height = 7;
     
-        var UF = new UnionFind<Cell>(); 
         var grid = Enumerable.Range(0, width*height).Select( x => new Cell(x%width,x/width));
-        foreach (var cell in grid) // works! 
-          UF.MakeSet(cell);
     
-       var edges = new List<Edge>();
+        var edges = new List<Edge>();
         foreach(var cell in grid) {
           if (cell.Key < width-1) edges.Add(new Edge(cell, new Cell(cell.Key+1, cell.Value)));
           if (cell.Value < height-1) edges.Add(new Edge(cell, new Cell(cell.Key, cell.Value+1)));
         }
+        var UF = new UnionFind<Cell>(); 
+        foreach (var cell in grid)
+          UF.MakeSet(cell);
     
         var random = new Random();
         int removedEdges = 0; 
