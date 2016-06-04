@@ -144,9 +144,9 @@
           var cell1 = edge.Key;
           var cell2 = edge.Value;
           if (cell1.Value == cell2.Value)
-            Console.WriteLine("  \\draw({0},{1}) -- ({2},{3});", cell2.Key, cell1.Value, cell2.Key, cell1.Value+1);
+            Console.WriteLine("  \\draw({0},{1}) -- ++(0,1);", cell2.Key, cell1.Value);
           else 
-            Console.WriteLine("  \\draw({0},{1}) -- ({2},{3});", cell1.Key, cell2.Value, cell1.Key+1, cell2.Value);
+            Console.WriteLine("  \\draw({0},{1}) -- ++(1,0);", cell1.Key, cell2.Value);
         }
         Console.WriteLine("\\end{tikzpicture}");
       }
@@ -160,13 +160,12 @@
         var grid = Enumerable.Range(0, width*height).Select( x => new Cell(x%width,x/width));
     
         var edges = new List<Edge>();
+        var UF = new UnionFind<Cell>(); 
         foreach(var cell in grid) {
           if (cell.Key < width-1) edges.Add(new Edge(cell, new Cell(cell.Key+1, cell.Value)));
           if (cell.Value < height-1) edges.Add(new Edge(cell, new Cell(cell.Key, cell.Value+1)));
-        }
-        var UF = new UnionFind<Cell>(); 
-        foreach (var cell in grid)
           UF.MakeSet(cell);
+        }
     
         var random = new Random();
         var candidates = new List<Edge>(edges);
