@@ -27,8 +27,8 @@ public class MazeGenerator {
   public static void Main(string[] args) {
 
     int width, height;
-    if (!Int32.TryParse(args[0], out width)) width = 7;
-    if (!Int32.TryParse(args[1], out height)) height = 7;
+    if (!(args.Length > 0 && Int32.TryParse(args[0], out width))) width = 7;
+    if (!(args.Length > 1 && Int32.TryParse(args[1], out height))) height = width;
 
     var grid = Enumerable.Range(0, width*height).Select( x => new Cell(x%width,x/width));
 
@@ -43,14 +43,14 @@ public class MazeGenerator {
 
     var random = new Random();
     var candidates = new List<Edge>(edges);
-    int removedEdges = 0; 
-    while (removedEdges < grid.Count()-1) {
+    int edgesToRemove = grid.Count()-1;
+    while(edgesToRemove > 0) {
       int next = random.Next(candidates.Count);
       var edge = candidates[next];
       if (UF.Find(edge.Key) != UF.Find(edge.Value)) {
         UF.Union(UF.Find(edge.Key),UF.Find(edge.Value));
         edges.Remove(edge);
-        removedEdges++;
+        edgesToRemove--;
       }
       candidates.RemoveAt(next); 
     }
